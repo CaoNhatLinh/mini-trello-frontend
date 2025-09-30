@@ -73,13 +73,14 @@ src/
 
 ### Authentication & User Management
 - **Email Verification Login**: Login via email with verification codes
-- **GitHub OAuth Integration**: Link GitHub account
-- **Protected Routes**: Route protection for authenticated users
-![image](https://github.com/user-attachments/assets/6916d93f-d435-47a7-8d6c-9e310be93c9d)
 
+![image](https://github.com/user-attachments/assets/6916d93f-d435-47a7-8d6c-9e310be93c9d)
     <img center src="https://github.com/user-attachments/assets/a84e2b3c-5aea-4adf-831e-721ed4c6cf92" title="Send code email" height="300">
     <img height="300" center  alt="image" src="https://github.com/user-attachments/assets/c70770f1-1af2-4e61-af84-8ff04826e926" />
+- **GitHub OAuth Integration**: Link GitHub account
+![image](https://github.com/user-attachments/assets/ac9bc7b3-1140-4c62-9d89-c7d5137ec805)
 
+- **Protected Routes**: Route protection for authenticated users
 
 ### Dashboard & Board Management
 - **Board Creation**: Create new boards with name and description
@@ -89,7 +90,7 @@ src/
 
 <img height="250" alt="image" src="https://github.com/user-attachments/assets/380813d5-b349-4851-9acf-af92e00a7618" /><img height="250" alt="image" src="https://github.com/user-attachments/assets/3bb11b92-9e86-4340-a633-656f4e64079d" /><img  height="250" alt="image" src="https://github.com/user-attachments/assets/ad5a43fb-d0ec-4a53-9816-652d1abd1ac5" />
 
-### 🎯 Kanban Board Interface
+### Kanban Board Interface
 - **Column Management**
 - **Drag & Drop**
 - **Real-time Updates**: Socket.IO updates on changes
@@ -107,7 +108,7 @@ src/
 
 <img  height="400" alt="image" src="https://github.com/user-attachments/assets/89d455f8-0385-4a1d-be70-dc558117c407" />
 
-### 👥 Member & Invitation Management
+### Member & Invitation Management
 - **Invite Members**: Send invitations via email/notification
 - **Accept/Decline**: Respond to board invitations
 - **Member List**: Display all board members
@@ -126,7 +127,7 @@ src/
 
 <img height="300" alt="image" src="https://github.com/user-attachments/assets/67fde94e-871b-43ef-a5f3-99bbc143652a" /><img height="300" alt="image" src="https://github.com/user-attachments/assets/2175111a-0eff-4968-afe9-ff5702eff66f" /><img height="300" alt="image" src="https://github.com/user-attachments/assets/23e709d4-7c73-43e0-b968-7fd740bb4e49" /><img height="300" alt="image" src="https://github.com/user-attachments/assets/abef74d8-6e11-448c-8ea3-644ddb21c19d" />
 
-###  Real-time Notifications
+### Real-time Notifications
 - **Notification Bell**: Icon with unread count badge
 - **Notification Dropdown**: List notifications with action
 - **Real-time Updates**: Socket.IO powered notifications
@@ -140,7 +141,7 @@ src/
 - **Error Handling**: User-friendly error messages
 
 
-## 🛠️ Development
+## Development
 
 ### Installation & Setup
 ```bash
@@ -155,7 +156,7 @@ npm run dev
 
 
 
-## 📱 Component Architecture
+## Component Architecture
 
 ### Key Components
 
@@ -190,7 +191,7 @@ npm run dev
 // - Search functionality
 ```
 
-## 🚀 Build & Deployment
+## Build & Deployment
 
 ### Production Build
 ```bash
@@ -203,7 +204,7 @@ npm run build
 3. **AWS S3 + CloudFront**: Scalable solution
 4. **Docker**: Containerized deployment
 
-## 🐛 Debugging & Troubleshooting
+## Debugging & Troubleshooting
 
 ### Common Issues
 1. **Socket.IO Connection**: Check CORS and network settings
