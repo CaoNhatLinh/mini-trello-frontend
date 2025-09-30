@@ -91,7 +91,7 @@ function EditBoardDialog({ open, onClose, board, onSave }) {
           </Alert>
         )}
         
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2,mt:1 }}>
           <TextField
             label="Board Name"
             value={name}

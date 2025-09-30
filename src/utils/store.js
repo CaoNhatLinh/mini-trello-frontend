@@ -88,6 +88,21 @@ export const useBoardStore = create((set, get) => ({
       throw error;
     }
   },
+  //leave board
+  leaveBoard: async (id) => {
+    set({ loading: true, error: null });
+    try {
+      await boardsAPI.leaveBoard(id);
+      set((state) => ({
+        boards: state.boards.filter((board) => board.id !== id),
+        currentBoard: state.currentBoard?.id === id ? null : state.currentBoard,
+        loading: false,
+      }));
+    } catch (error) {
+      set({ error: error.response?.data?.message || 'Failed to leave board', loading: false });
+      throw error;
+    }
+  },
 
   // Set current board
   setCurrentBoard: (board) => set({ currentBoard: board }),

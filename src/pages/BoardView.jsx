@@ -19,7 +19,6 @@ import TaskDetailDialog from '../components/tasks/TaskDetailDialog';
 import BoardColumns from '../components/boards/BoardColumns';
 import InviteMember from '../components/boards/InviteMember';
 import InvitationList from '../components/boards/InvitationList';
-import BoardSettings from '../components/boards/BoardSettings';
 import EditBoardDialog from '../components/boards/EditBoardDialog';
 import DeleteBoardDialog from '../components/boards/DeleteBoardDialog';
 
@@ -77,7 +76,6 @@ function BoardView() {
   const [inviteMemberOpen, setInviteMemberOpen] = useState(false);
   const [invitationListOpen, setInvitationListOpen] = useState(false);
   
-  const [boardSettingsOpen, setBoardSettingsOpen] = useState(false);
   
   const [editBoardOpen, setEditBoardOpen] = useState(false);
   const [deleteBoardOpen, setDeleteBoardOpen] = useState(false);
@@ -159,9 +157,7 @@ function BoardView() {
     }
   }, [invitationListOpen]);
 
-  const handleBoardSettingsClose = useCallback(() => {
-    setBoardSettingsOpen(false);
-  }, []);
+
 
   const handleEditBoard = useCallback((board) => {
     setEditBoardOpen(true);
@@ -579,14 +575,7 @@ function BoardView() {
           onClose={handleInvitationListClose}
         />
 
-        {/* Board Settings Dialog */}
-        <BoardSettings
-          board={currentBoard}
-          isOpen={boardSettingsOpen}
-          onClose={handleBoardSettingsClose}
-          onUpdate={handleBoardSave}
-          onDelete={handleBoardDeleteConfirm}
-        />
+    
 
         {/* Edit Board Dialog */}
         <EditBoardDialog

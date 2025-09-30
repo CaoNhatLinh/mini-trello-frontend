@@ -60,6 +60,7 @@ function BoardHeader({
 
   const handleLeaveConfirm = () => {
     setLeaveDialogOpen(false);
+    console.log('Leaving board:', board); 
     onLeaveBoard?.(board);
   };
 

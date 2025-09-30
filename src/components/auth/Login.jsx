@@ -145,197 +145,197 @@ function Login() {
           justifyContent: 'center',
         }}
       >
-          <Paper 
-            elevation={24} 
-            sx={{ 
-              padding: { xs: 3, sm: 4 }, 
-              width: '100%',
-              maxWidth: '100%',
-              borderRadius: 3,
-              backdropFilter: 'blur(10px)',
-              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+        <Paper
+          elevation={24}
+          sx={{
+            padding: { xs: 3, sm: 4 },
+            width: '100%',
+            maxWidth: '100%',
+            borderRadius: 3,
+            backdropFilter: 'blur(10px)',
+            backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          }}
+        >
+          {/* Logo */}
+          <Box sx={{ textAlign: 'center', mb: 3 }}>
+            <img
+              src="/src/assets/img/logo.png"
+              alt="Logo"
+              style={{
+                width: '64px',
+                height: '64px',
+                objectFit: 'contain',
+                margin: '0 auto',
+                display: 'block',
+              }}
+            />
+          </Box>
+
+          <Typography
+            variant="h6"
+            align="center"
+            sx={{
+              mb: 1,
+              fontWeight: 500,
+              color: '#1a1a1a'
             }}
           >
-            {/* Logo */}
-            <Box sx={{ textAlign: 'center', mb: 3 }}>
-              <Typography
-                variant="h3"
+            {step === 'email' ? 'Enter your email' : 'Enter verification code'}
+          </Typography>
+
+          {step === 'code' && formData.email && (
+            <Typography
+              variant="body2"
+              align="center"
+              color="text.secondary"
+              sx={{ mb: 2 }}
+            >
+              We sent a code to {formData.email}
+            </Typography>
+          )}
+
+          {callbackError && (
+            <Alert severity="error" sx={{ mb: 2, borderRadius: 2 }}>
+              {callbackError}
+            </Alert>
+          )}
+
+          {(error || localError) && (
+            <Alert severity="error" sx={{ mb: 2, borderRadius: 2 }}>
+              {error || localError}
+            </Alert>
+          )}
+
+          {step === 'email' ? (
+            <Box component="form" onSubmit={handleSendCode} sx={{ mt: 2 }}>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                placeholder="Enter your email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                autoFocus
+                value={formData.email}
+                onChange={handleChange}
+                disabled={localLoading}
                 sx={{
-                  fontWeight: 'bold',
-                  color: '#E53E3E',
-                  fontSize: '2.5rem',
-                  fontFamily: '"Inter", sans-serif',
+                  '& .MuiOutlinedInput-root': {
+                    backgroundColor: '#f8f9fa',
+                    '&:hover': {
+                      backgroundColor: '#f1f3f4',
+                    },
+                  },
+                }}
+              />
+
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{
+                  mt: 2,
+                  mb: 2,
+                  py: 1.5,
+                  backgroundColor: '#2B78E4',
+                  '&:hover': {
+                    backgroundColor: '#1a65d1',
+                  },
+                }}
+                disabled={localLoading || !formData.email}
+              >
+                {localLoading ? (
+                  <CircularProgress size={24} color="inherit" />
+                ) : (
+                  'Send Code'
+                )}
+              </Button>
+            </Box>
+          ) : (
+            <Box component="form" onSubmit={handleVerifyCode} sx={{ mt: 2 }}>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="verificationCode"
+                placeholder="Enter 6-digit code"
+                name="verificationCode"
+                autoComplete="one-time-code"
+                autoFocus
+                value={formData.verificationCode}
+                onChange={handleChange}
+                disabled={localLoading}
+                inputProps={{
+                  maxLength: 6,
+                  pattern: '[0-9]{6}',
+                }}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    backgroundColor: '#f8f9fa',
+                    '&:hover': {
+                      backgroundColor: '#f1f3f4',
+                    },
+                  },
+                }}
+              />
+
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{
+                  mt: 2,
+                  mb: 1,
+                  py: 1.5,
+                  backgroundColor: '#2B78E4',
+                  '&:hover': {
+                    backgroundColor: '#1a65d1',
+                  },
+                }}
+                disabled={localLoading || formData.verificationCode.length !== 6}
+              >
+                {localLoading ? (
+                  <CircularProgress size={24} color="inherit" />
+                ) : (
+                  'Verify Code'
+                )}
+              </Button>
+
+              <Button
+                fullWidth
+                variant="text"
+                onClick={handleBackToEmail}
+                disabled={localLoading}
+                sx={{
+                  mb: 2,
+                  color: '#2B78E4',
                 }}
               >
-                S
-              </Typography>
+                Back to email
+              </Button>
             </Box>
+          )}
 
-            <Typography 
-              variant="h6" 
-              align="center" 
-              sx={{ 
-                mb: 1,
-                fontWeight: 500,
-                color: '#1a1a1a'
-              }}
-            >
-              {step === 'email' ? 'Enter your email' : 'Enter verification code'}
-            </Typography>
-
-            {step === 'code' && formData.email && (
-              <Typography 
-                variant="body2" 
-                align="center" 
-                color="text.secondary"
-                sx={{ mb: 2 }}
-              >
-                We sent a code to {formData.email}
-              </Typography>
-            )}
-
-            {callbackError && (
-              <Alert severity="error" sx={{ mb: 2, borderRadius: 2 }}>
-                {callbackError}
-              </Alert>
-            )}
-
-            {(error || localError) && (
-              <Alert severity="error" sx={{ mb: 2, borderRadius: 2 }}>
-                {error || localError}
-              </Alert>
-            )}
-
-            {step === 'email' ? (
-              <Box component="form" onSubmit={handleSendCode} sx={{ mt: 2 }}>
-                <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="email"
-                  placeholder="Enter your email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  autoFocus
-                  value={formData.email}
-                  onChange={handleChange}
-                  disabled={localLoading}
-                  sx={{
-                    '& .MuiOutlinedInput-root': {
-                      backgroundColor: '#f8f9fa',
-                      '&:hover': {
-                        backgroundColor: '#f1f3f4',
-                      },
-                    },
-                  }}
-                />
-
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{ 
-                    mt: 2, 
-                    mb: 2,
-                    py: 1.5,
-                    backgroundColor: '#2B78E4',
-                    '&:hover': {
-                      backgroundColor: '#1a65d1',
-                    },
-                  }}
-                  disabled={localLoading || !formData.email}
-                >
-                  {localLoading ? (
-                    <CircularProgress size={24} color="inherit" />
-                  ) : (
-                    'Send Code'
-                  )}
-                </Button>
-              </Box>
-            ) : (
-              <Box component="form" onSubmit={handleVerifyCode} sx={{ mt: 2 }}>
-                <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="verificationCode"
-                  placeholder="Enter 6-digit code"
-                  name="verificationCode"
-                  autoComplete="one-time-code"
-                  autoFocus
-                  value={formData.verificationCode}
-                  onChange={handleChange}
-                  disabled={localLoading}
-                  inputProps={{
-                    maxLength: 6,
-                    pattern: '[0-9]{6}',
-                  }}
-                  sx={{
-                    '& .MuiOutlinedInput-root': {
-                      backgroundColor: '#f8f9fa',
-                      '&:hover': {
-                        backgroundColor: '#f1f3f4',
-                      },
-                    },
-                  }}
-                />
-
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{ 
-                    mt: 2, 
-                    mb: 1,
-                    py: 1.5,
-                    backgroundColor: '#2B78E4',
-                    '&:hover': {
-                      backgroundColor: '#1a65d1',
-                    },
-                  }}
-                  disabled={localLoading || formData.verificationCode.length !== 6}
-                >
-                  {localLoading ? (
-                    <CircularProgress size={24} color="inherit" />
-                  ) : (
-                    'Verify Code'
-                  )}
-                </Button>
-
-                <Button
-                  fullWidth
-                  variant="text"
-                  onClick={handleBackToEmail}
-                  disabled={localLoading}
-                  sx={{ 
-                    mb: 2,
-                    color: '#2B78E4',
-                  }}
-                >
-                  Back to email
-                </Button>
-              </Box>
-            )}
-
-            <Typography
-              variant="caption"
-              color="text.secondary"
-              sx={{ 
-                display: 'block', 
-                textAlign: 'center', 
-                mt: 3,
-                lineHeight: 1.4,
-              }}
-            >
-              Privacy Policy
-              <br />
-              This site is protected by reCAPTCHA and the Google Privacy
-              Policy and Terms of Service apply.
-            </Typography>
-          </Paper>
-        </Box>
+          <Typography
+            variant="caption"
+            color="text.secondary"
+            sx={{
+              display: 'block',
+              textAlign: 'center',
+              mt: 3,
+              lineHeight: 1.4,
+            }}
+          >
+            Privacy Policy
+            <br />
+            This site is protected by reCAPTCHA and the Google Privacy
+            Policy and Terms of Service apply.
+          </Typography>
+        </Paper>
       </Box>
+    </Box>
   );
 }
 
