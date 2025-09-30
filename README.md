@@ -113,20 +113,19 @@ src/
 - **Accept/Decline**: Respond to board invitations
 - **Member List**: Display all board members
 
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/d23f4e92-17ed-431c-8a21-81a19c74f2c7" />
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/507ff979-9f91-4364-aad4-2a4b1aec98f2" />
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/169ba108-556d-4161-b44c-56b4fb53ce07" />
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/f93eaf8f-2e0f-4e00-88ea-b344c412a567" />
+<p float="left">
+  <img height="300" alt="image" src="https://github.com/user-attachments/assets/d23f4e92-17ed-431c-8a21-81a19c74f2c7" />
+  <img height="300" alt="image" src="https://github.com/user-attachments/assets/507ff979-9f91-4364-aad4-2a4b1aec98f2" />
+  <img height="300" alt="image" src="https://github.com/user-attachments/assets/169ba108-556d-4161-b44c-56b4fb53ce07" />
+  <img height="300" alt="image" src="https://github.com/user-attachments/assets/f93eaf8f-2e0f-4e00-88ea-b344c412a567" />
+</p>
 
 
 ### GitHub Integration
 - **Repository Access**: Xem danh sách repositories
 - **GitHub attachments (pull requests, commits, issues)**
 
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/67fde94e-871b-43ef-a5f3-99bbc143652a" />
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/2175111a-0eff-4968-afe9-ff5702eff66f" />
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/23e709d4-7c73-43e0-b968-7fd740bb4e49" />
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/abef74d8-6e11-448c-8ea3-644ddb21c19d" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/67fde94e-871b-43ef-a5f3-99bbc143652a" /><img height="300" alt="image" src="https://github.com/user-attachments/assets/2175111a-0eff-4968-afe9-ff5702eff66f" /><img height="300" alt="image" src="https://github.com/user-attachments/assets/23e709d4-7c73-43e0-b968-7fd740bb4e49" /><img height="300" alt="image" src="https://github.com/user-attachments/assets/abef74d8-6e11-448c-8ea3-644ddb21c19d" />
 
 ###  Real-time Notifications
 - **Notification Bell**: Icon with unread count badge
