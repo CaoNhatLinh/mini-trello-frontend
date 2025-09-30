@@ -1,4 +1,4 @@
-# 🎨 Mini Trello Frontend
+<img width="680" height="765" alt="image" src="https://github.com/user-attachments/assets/42b0ce34-ef92-4b02-ac8e-0373f192e2d1" /># 🎨 Mini Trello Frontend
 
 Frontend React application cho ứng dụng Mini Trello được xây dựng với React 19, Vite và Material-UI.
 
@@ -42,17 +42,17 @@ src/
 │   │   ├── NotificationIcon.jsx    # Bell icon với badge
 │   │   ├── NotificationList.jsx    # Dropdown notification list
 │   │   └── NotificationManager.jsx # Notification state management
-│   ├── tasks/                   # Task management components
-│   │   ├── CardColumn.jsx          # Individual column component
-│   │   ├── TaskCard.jsx            # Task card component
-│   │   ├── TaskDetailDialog.jsx    # Task detail modal
-│   │   ├── TaskMemberAssignment.jsx # Member assignment component
-│   │   ├── GitHubIntegration.jsx   # GitHub attachment UI
-│   │   ├── GitHubAttachmentDialog.jsx
-│   │   ├── GitHubAttachmentIndicator.jsx
-│   │   ├── GitHubAttachmentList.jsx
-│   │   └── GitHubAttachmentSummary.jsx
-│   └── users/                   # User-related components
+│   └── tasks/                   # Task management components
+│       ├── CardColumn.jsx          # Individual column component
+│       ├── TaskCard.jsx            # Task card component
+│       ├── TaskDetailDialog.jsx    # Task detail modal
+│       ├── TaskMemberAssignment.jsx # Member assignment component
+│       ├── GitHubIntegration.jsx   # GitHub attachment UI
+│       ├── GitHubAttachmentDialog.jsx
+│       ├── GitHubAttachmentIndicator.jsx
+│       ├── GitHubAttachmentList.jsx
+│       └── GitHubAttachmentSummary.jsx
+│    
 ├── contexts/                 # React contexts
 │   └── AuthContext.jsx         # Authentication context
 ├── hooks/                    # Custom hooks
@@ -63,10 +63,7 @@ src/
 │   └── BoardView.jsx           # Board detail với Kanban view
 ├── services/                 # API và external services
 │   ├── api.js                  # Axios API client
-│   └── socketService.js        # Socket.IO client
-├── theme/                    # UI theming
-│   ├── colors.css              # CSS color variables
-│   └── theme.js                # MUI theme configuration
+│   └── socketService.js        # Socket.IO client  
 └── utils/                    # Utility functions
     ├── index.js                # General utilities
     └── store.js                # Zustand store definitions
@@ -80,10 +77,12 @@ src/
 - **User Profile Management**: Cập nhật thông tin cá nhân
 - **Protected Routes**: Route protection cho authenticated users
 
-**📸 CHỤP ẢNH SCREENS:**
-- [ ] Login page với email input và verification code form
-- [ ] User profile dialog với GitHub connection status
-- [ ] GitHub OAuth callback success/error states
+
+
+<img src="https://github.com/user-attachments/assets/6916d93f-d435-47a7-8d6c-9e310be93c9d" title="Login page" height="300">
+<img src="https://github.com/user-attachments/assets/a84e2b3c-5aea-4adf-831e-721ed4c6cf92" title="Send code email" height="300">
+<img height="300"  alt="image" src="https://github.com/user-attachments/assets/c70770f1-1af2-4e61-af84-8ff04826e926" />
+
 
 ### 📋 Dashboard & Board Management
 - **Board Creation**: Tạo board mới với tên và mô tả
@@ -93,6 +92,9 @@ src/
 
 **📸 CHỤP ẢNH SCREENS:**
 - [ ] Dashboard với board grid layout
+<img width="1919" height="874" alt="image" src="https://github.com/user-attachments/assets/380813d5-b349-4851-9acf-af92e00a7618" />
+    <img width="751" height="428" alt="image" src="https://github.com/user-attachments/assets/3bb11b92-9e86-4340-a633-656f4e64079d" />
+
 - [ ] Create board dialog
 - [ ] Board settings dialog
 - [ ] Empty state khi chưa có boards
@@ -116,12 +118,14 @@ src/
 - **Task Status**: Todo, In Progress, Done states
 - **Quick Add Task**: Nhanh chóng thêm task vào column
 
-**📸 CHỤP ẢNH SCREENS:**
-- [ ] Task detail dialog đầy đủ thông tin
-- [ ] Task card trong column
-- [ ] Member assignment dropdown
-- [ ] Quick add task input
-- [ ] Task priority và due date indicators
+
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/016f6776-42f4-492b-a50e-8947f75af828" />
+
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/8d984a99-6376-41fc-a75c-e2a2acde1881" />
+
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/bad9f68c-5942-4978-870f-0b74ebe09e49" />
+
+<img  height="300" alt="image" src="https://github.com/user-attachments/assets/89d455f8-0385-4a1d-be70-dc558117c407" />
 
 ### 👥 Member & Invitation Management
 - **Invite Members**: Gửi lời mời qua email
@@ -211,77 +215,7 @@ npm run dev
 # Application will be available at http://localhost:3000
 ```
 
-## 🏪 State Management (Zustand)
 
-### Store Structure
-```javascript
-// Authentication Store
-useAuthStore: {
-  user,
-  isAuthenticated,
-  login,
-  logout,
-  updateProfile
-}
-
-// Board Store
-useBoardStore: {
-  boards,
-  currentBoard,
-  loading,
-  error,
-  fetchBoards,
-  createBoard,
-  updateBoard,
-  deleteBoard
-}
-
-// Card Store (Columns)
-useCardStore: {
-  cards,
-  loading,
-  error,
-  fetchCards,
-  createCard,
-  updateCard,
-  deleteCard,
-  updateCardPosition
-}
-
-// Task Store
-useTaskStore: {
-  tasks,
-  loading,
-  error,
-  fetchTasks,
-  createTask,
-  updateTask,
-  deleteTask,
-  moveTask,
-  getTasksForCard
-}
-```
-
-## 🔌 Real-time Updates (Socket.IO)
-
-### Socket Events Handling
-```javascript
-// Board Events
-socket.on('board_created', handleBoardCreated);
-socket.on('board_updated', handleBoardUpdated);
-socket.on('member_joined', handleMemberJoined);
-
-// Task Events
-socket.on('task_created', handleTaskCreated);
-socket.on('task_updated', handleTaskUpdated);
-socket.on('task_moved', handleTaskMoved);
-
-// GitHub Events
-socket.on('github_attachment_added', handleGitHubAttachmentAdded);
-
-// Notification Events
-socket.on('new_notification', handleNewNotification);
-```
 
 ## 📱 Component Architecture
 
