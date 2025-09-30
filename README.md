@@ -154,43 +154,6 @@ npm run dev
 # Application will be available at http://localhost:5173
 ```
 
-
-
-## Component Architecture
-
-### Key Components
-
-#### TaskCard Component
-```jsx
-// TaskCard hiển thị task trong column với:
-// - Title và description
-// - Assigned members (avatars)
-// - Due date indicator
-// - Priority color coding
-// - GitHub attachment indicator
-// - Drag & drop support
-```
-
-#### BoardColumns Component  
-```jsx
-// BoardColumns render Kanban layout với:
-// - Drag & drop zones
-// - Column headers với actions
-// - Task lists với virtual scrolling
-// - Add task buttons
-// - Real-time updates
-```
-
-#### GitHubIntegration Component
-```jsx
-// GitHub integration UI bao gồm:
-// - Repository selection
-// - Issue/PR browsing
-// - Attachment management
-// - Connection status
-// - Search functionality
-```
-
 ## Build & Deployment
 
 ### Production Build
