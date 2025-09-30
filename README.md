@@ -1,72 +1,72 @@
 #  Mini Trello Frontend
 
-Frontend React application cho ứng dụng Mini Trello được xây dựng với React 19, Vite và Material-UI.
+The Mini Trello frontend application is built with React 19, Vite, and Material-UI.
 
-## Kiến trúc Frontend
-
+## Frontend Architecture
 ### Tech Stack
-- **React 19** với **Vite** build tool
-- **Material-UI (MUI)** cho UI components
-- **React Router Dom** cho navigation
-- **Socket.IO Client** cho real-time communication
-- **Zustand** cho state management
-- **React DnD** cho drag & drop functionality
-- **Axios** cho API calls
-- **Date-fns** cho date formatting
+- **React 19** with **Vite** as the build tool
+- **Material-UI (MUI)**: UI components
+- **React Router Dom**: navigation
+- **Socket.IO Client**: real-time communication
+- **Zustand**: state management
+- **React DnD**: drag & drop functionality
+- **Axios**: API calls
+- **Date-fns**: date formatting
 
-### Cấu trúc thư mục
+### Folder Structure
 ```
 src/
-├── App.jsx                   # Main App component với routing
-├── main.jsx                  # Entry point
-├── assets/                   # Static assets (images, icons)
-├── components/               # Reusable components
-│   ├── auth/                    # Authentication components
-│   │   ├── Login.jsx               # Login form với email verification
-│   │   ├── GitHubCallback.jsx      # GitHub OAuth callback handler
-│   │   └── ProtectedRoute.jsx      # Route protection wrapper
-│   ├── boards/                  # Board management components
-│   │   ├── BoardColumns.jsx        # Kanban board layout
-│   │   ├── BoardHeader.jsx         # Board title và member management
-│   │   ├── BoardSettings.jsx       # Board settings dialog
-│   │   ├── DeleteBoardDialog.jsx   # Delete confirmation dialog
-│   │   ├── EditBoardDialog.jsx     # Edit board dialog
-│   │   ├── InvitationList.jsx      # Board invitations list
-│   │   ├── InviteMember.jsx        # Invite member dialog
-│   │   ├── ListDialog.jsx          # Create/edit column dialog
-│   │   └── PendingInvitations.jsx  # User's pending invitations
-│   ├── layout/                  # Layout components
-│   │   ├── Layout.jsx              # Main layout wrapper
-│   │   └── Navbar.jsx              # Navigation bar
-│   ├── notifications/           # Notification system
-│   │   ├── NotificationIcon.jsx    # Bell icon với badge
-│   │   ├── NotificationList.jsx    # Dropdown notification list
-│   │   └── NotificationManager.jsx # Notification state management
-│   └── tasks/                   # Task management components
-│       ├── CardColumn.jsx          # Individual column component
-│       ├── TaskCard.jsx            # Task card component
-│       ├── TaskDetailDialog.jsx    # Task detail modal
-│       ├── TaskMemberAssignment.jsx # Member assignment component
-│       ├── GitHubIntegration.jsx   # GitHub attachment UI
+├── App.jsx                               # Main App component with routing
+├── main.jsx                              # Entry point
+├── assets/                               # Static assets (images, icons)
+├── components/                           # Reusable components
+│   ├── auth/                             # Authentication components
+│   │   ├── Login.jsx                     # Login form with email verification
+│   │   ├── GitHubCallback.jsx            # GitHub OAuth callback handler
+│   │   └── ProtectedRoute.jsx            # Route protection wrapper
+│   ├── boards/                           # Board management components
+│   │   ├── BoardColumns.jsx              # Kanban board layout
+│   │   ├── BoardHeader.jsx               # Board title and member management
+│   │   ├── BoardSettings.jsx             # Board settings dialog
+│   │   ├── DeleteBoardDialog.jsx         # Delete confirmation dialog
+│   │   ├── EditBoardDialog.jsx           # Edit board dialog
+│   │   ├── InvitationList.jsx            # Board invitations list
+│   │   ├── InviteMember.jsx              # Invite member dialog
+│   │   ├── ListDialog.jsx                # Create/edit column dialog
+│   │   └── PendingInvitations.jsx        # User's pending invitations
+│   ├── layout/                           # Layout components
+│   │   ├── Layout.jsx                    # Main layout wrapper
+│   │   └── Navbar.jsx                    # Navigation bar
+│   ├── notifications/                    # Notification system
+│   │   ├── NotificationIcon.jsx          # Bell icon with badge
+│   │   ├── NotificationList.jsx          # Dropdown notification list
+│   │   └── NotificationManager.jsx       # Notification state management
+│   └── tasks/                            # Task management components
+│       ├── CardColumn.jsx                # Individual column component
+│       ├── TaskCard.jsx                  # Task card component
+│       ├── TaskDetailDialog.jsx          # Task detail modal
+│       ├── TaskMemberAssignment.jsx      # Member assignment component
+│       ├── GitHubIntegration.jsx         # GitHub attachment UI
 │       ├── GitHubAttachmentDialog.jsx
 │       ├── GitHubAttachmentIndicator.jsx
 │       ├── GitHubAttachmentList.jsx
 │       └── GitHubAttachmentSummary.jsx
 │    
-├── contexts/                 # React contexts
-│   └── AuthContext.jsx         # Authentication context
-├── hooks/                    # Custom hooks
-│   ├── useGitHubAttachments.js # GitHub attachments hook
-│   └── useRealTimeUpdates.js   # Socket.IO real-time updates
-├── pages/                    # Page components
-│   ├── Dashboard.jsx           # Main dashboard với board list
-│   └── BoardView.jsx           # Board detail với Kanban view
-├── services/                 # API và external services
-│   ├── api.js                  # Axios API client
-│   └── socketService.js        # Socket.IO client  
-└── utils/                    # Utility functions
-    ├── index.js                # General utilities
-    └── store.js                # Zustand store definitions
+├── contexts/                             # React contexts
+│   └── AuthContext.jsx                   # Authentication context
+├── hooks/                                # Custom hooks
+│   ├── useGitHubAttachments.js           # GitHub attachments hook
+│   └── useRealTimeUpdates.js             # Socket.IO real-time updates
+├── pages/                                # Page components
+│   ├── Dashboard.jsx                     # Main dashboard with board list
+│   └── BoardView.jsx                     # Board detail with Kanban view
+├── services/                             # API and external services
+│   ├── api.js                            # Axios API client
+│   └── socketService.js                  # Socket.IO client
+└── utils/                                # Utility functions
+    ├── index.js                          # General utilities
+    └── store.js                          # Zustand store definitions
+
 ```
 
 ## Core Features
@@ -75,10 +75,10 @@ src/
 - **Email Verification Login**: Login via email with verification codes
 - **GitHub OAuth Integration**: Link GitHub account
 - **Protected Routes**: Route protection for authenticated users
+![image](https://github.com/user-attachments/assets/6916d93f-d435-47a7-8d6c-9e310be93c9d)
 
-<img src="https://github.com/user-attachments/assets/6916d93f-d435-47a7-8d6c-9e310be93c9d" title="Login page" height="300">
-<img src="https://github.com/user-attachments/assets/a84e2b3c-5aea-4adf-831e-721ed4c6cf92" title="Send code email" height="300">
-<img height="300"  alt="image" src="https://github.com/user-attachments/assets/c70770f1-1af2-4e61-af84-8ff04826e926" />
+    <img center src="https://github.com/user-attachments/assets/a84e2b3c-5aea-4adf-831e-721ed4c6cf92" title="Send code email" height="300">
+    <img height="300" center  alt="image" src="https://github.com/user-attachments/assets/c70770f1-1af2-4e61-af84-8ff04826e926" />
 
 
 ### Dashboard & Board Management
@@ -87,9 +87,7 @@ src/
 - **Board Access Control**: Owner and member permissions
 - **Board Settings**: Edit, delete, leave board options
 
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/380813d5-b349-4851-9acf-af92e00a7618" />
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/3bb11b92-9e86-4340-a633-656f4e64079d" />
-<img  height="300" alt="image" src="https://github.com/user-attachments/assets/ad5a43fb-d0ec-4a53-9816-652d1abd1ac5" />
+<img height="250" alt="image" src="https://github.com/user-attachments/assets/380813d5-b349-4851-9acf-af92e00a7618" /><img height="250" alt="image" src="https://github.com/user-attachments/assets/3bb11b92-9e86-4340-a633-656f4e64079d" /><img  height="250" alt="image" src="https://github.com/user-attachments/assets/ad5a43fb-d0ec-4a53-9816-652d1abd1ac5" />
 
 ### 🎯 Kanban Board Interface
 - **Column Management**
@@ -103,22 +101,23 @@ src/
 - **Member Assignment**
 - **Quick Add Task**
 
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/016f6776-42f4-492b-a50e-8947f75af828" />
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/8d984a99-6376-41fc-a75c-e2a2acde1881" />
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/bad9f68c-5942-4978-870f-0b74ebe09e49" />
-<img  height="300" alt="image" src="https://github.com/user-attachments/assets/89d455f8-0385-4a1d-be70-dc558117c407" />
+![image](https://github.com/user-attachments/assets/016f6776-42f4-492b-a50e-8947f75af828)
+![image](https://github.com/user-attachments/assets/8d984a99-6376-41fc-a75c-e2a2acde1881)
+![image](https://github.com/user-attachments/assets/bad9f68c-5942-4978-870f-0b74ebe09e49)
+
+<img  height="400" alt="image" src="https://github.com/user-attachments/assets/89d455f8-0385-4a1d-be70-dc558117c407" />
 
 ### 👥 Member & Invitation Management
 - **Invite Members**: Send invitations via email/notification
 - **Accept/Decline**: Respond to board invitations
 - **Member List**: Display all board members
 
-<p float="left">
-  <img height="300" alt="image" src="https://github.com/user-attachments/assets/d23f4e92-17ed-431c-8a21-81a19c74f2c7" />
-  <img height="300" alt="image" src="https://github.com/user-attachments/assets/507ff979-9f91-4364-aad4-2a4b1aec98f2" />
-  <img height="300" alt="image" src="https://github.com/user-attachments/assets/169ba108-556d-4161-b44c-56b4fb53ce07" />
-  <img height="300" alt="image" src="https://github.com/user-attachments/assets/f93eaf8f-2e0f-4e00-88ea-b344c412a567" />
-</p>
+
+<img alt="image" src="https://github.com/user-attachments/assets/d23f4e92-17ed-431c-8a21-81a19c74f2c7" />
+<img height="282" alt="image" src="https://github.com/user-attachments/assets/507ff979-9f91-4364-aad4-2a4b1aec98f2" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/169ba108-556d-4161-b44c-56b4fb53ce07" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/f93eaf8f-2e0f-4e00-88ea-b344c412a567" />
+
 
 
 ### GitHub Integration
@@ -196,7 +195,6 @@ npm run dev
 ### Production Build
 ```bash
 npm run build
-# Output: dist/ directory
 ```
 
 ### Deployment Options
