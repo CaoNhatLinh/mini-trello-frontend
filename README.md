@@ -1,8 +1,8 @@
-<img width="680" height="765" alt="image" src="https://github.com/user-attachments/assets/42b0ce34-ef92-4b02-ac8e-0373f192e2d1" /># 🎨 Mini Trello Frontend
+#  Mini Trello Frontend
 
 Frontend React application cho ứng dụng Mini Trello được xây dựng với React 19, Vite và Material-UI.
 
-## 🏗️ Kiến trúc Frontend
+## Kiến trúc Frontend
 
 ### Tech Stack
 - **React 19** với **Vite** build tool
@@ -69,140 +69,80 @@ src/
     └── store.js                # Zustand store definitions
 ```
 
-## 🌟 Chức năng chính
+## Core Features
 
-### 🔐 Authentication & User Management
-- **Email Verification Login**: Đăng nhập bằng email với mã xác thực
-- **GitHub OAuth Integration**: Liên kết tài khoản GitHub
-- **User Profile Management**: Cập nhật thông tin cá nhân
-- **Protected Routes**: Route protection cho authenticated users
-
-
+### Authentication & User Management
+- **Email Verification Login**: Login via email with verification codes
+- **GitHub OAuth Integration**: Link GitHub account
+- **Protected Routes**: Route protection for authenticated users
 
 <img src="https://github.com/user-attachments/assets/6916d93f-d435-47a7-8d6c-9e310be93c9d" title="Login page" height="300">
 <img src="https://github.com/user-attachments/assets/a84e2b3c-5aea-4adf-831e-721ed4c6cf92" title="Send code email" height="300">
 <img height="300"  alt="image" src="https://github.com/user-attachments/assets/c70770f1-1af2-4e61-af84-8ff04826e926" />
 
 
-### 📋 Dashboard & Board Management
-- **Board Creation**: Tạo board mới với tên và mô tả
-- **Board List View**: Hiển thị tất cả boards của user
-- **Board Access Control**: Owner và member permissions
+### Dashboard & Board Management
+- **Board Creation**: Create new boards with name and description
+- **Board List View**: Display all user boards
+- **Board Access Control**: Owner and member permissions
 - **Board Settings**: Edit, delete, leave board options
 
-**📸 CHỤP ẢNH SCREENS:**
-- [ ] Dashboard với board grid layout
-<img width="1919" height="874" alt="image" src="https://github.com/user-attachments/assets/380813d5-b349-4851-9acf-af92e00a7618" />
-    <img width="751" height="428" alt="image" src="https://github.com/user-attachments/assets/3bb11b92-9e86-4340-a633-656f4e64079d" />
-
-- [ ] Create board dialog
-- [ ] Board settings dialog
-- [ ] Empty state khi chưa có boards
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/380813d5-b349-4851-9acf-af92e00a7618" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/3bb11b92-9e86-4340-a633-656f4e64079d" />
+<img  height="300" alt="image" src="https://github.com/user-attachments/assets/ad5a43fb-d0ec-4a53-9816-652d1abd1ac5" />
 
 ### 🎯 Kanban Board Interface
-- **Column Management**: Tạo, sửa, xóa columns (To Do, In Progress, Done)
-- **Drag & Drop**: Kéo thả tasks giữa các columns
-- **Real-time Updates**: Socket.IO updates khi có thay đổi
+- **Column Management**
+- **Drag & Drop**
+- **Real-time Updates**: Socket.IO updates on changes
 - **Board Header**: Title, member list, actions
 
-**📸 CHỤP ẢNH SCREENS:**
-- [ ] Full Kanban board view với 3 columns
-- [ ] Drag & drop task animation
-- [ ] Board header với member avatars
-- [ ] Add new column dialog
-
-### ✅ Task Management
-- **Task CRUD**: Tạo, đọc, cập nhật, xóa tasks
-- **Task Details**: Title, description, priority, due date
-- **Member Assignment**: Gán tasks cho board members
-- **Task Status**: Todo, In Progress, Done states
-- **Quick Add Task**: Nhanh chóng thêm task vào column
-
+### Task Management
+- **Task CRUD**
+- **Task Details**
+- **Member Assignment**
+- **Quick Add Task**
 
 <img height="300" alt="image" src="https://github.com/user-attachments/assets/016f6776-42f4-492b-a50e-8947f75af828" />
-
 <img height="300" alt="image" src="https://github.com/user-attachments/assets/8d984a99-6376-41fc-a75c-e2a2acde1881" />
-
 <img height="300" alt="image" src="https://github.com/user-attachments/assets/bad9f68c-5942-4978-870f-0b74ebe09e49" />
-
 <img  height="300" alt="image" src="https://github.com/user-attachments/assets/89d455f8-0385-4a1d-be70-dc558117c407" />
 
 ### 👥 Member & Invitation Management
-- **Invite Members**: Gửi lời mời qua email
-- **Pending Invitations**: Xem và quản lý lời mời đã gửi
-- **Accept/Decline**: Phản hồi lời mời tham gia board
-- **Member List**: Hiển thị tất cả members của board
-- **Remove Members**: Owner có thể remove members
+- **Invite Members**: Send invitations via email/notification
+- **Accept/Decline**: Respond to board invitations
+- **Member List**: Display all board members
 
-**📸 CHỤP ẢNH SCREENS:**
-- [ ] Invite member dialog với email input
-- [ ] Pending invitations list
-- [ ] Board member list với roles
-- [ ] Invitation notification trong notification center
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/d23f4e92-17ed-431c-8a21-81a19c74f2c7" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/507ff979-9f91-4364-aad4-2a4b1aec98f2" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/169ba108-556d-4161-b44c-56b4fb53ce07" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/f93eaf8f-2e0f-4e00-88ea-b344c412a567" />
 
-### 🔗 GitHub Integration
+
+### GitHub Integration
 - **Repository Access**: Xem danh sách repositories
-- **Issue Attachment**: Đính kèm GitHub issues vào tasks
-- **Pull Request Attachment**: Đính kèm PRs vào tasks
-- **Commit Tracking**: Link commits với tasks
-- **GitHub Status**: Hiển thị connection status
+- **GitHub attachments (pull requests, commits, issues)**
 
-**📸 CHỤP ẢNH SCREENS:**
-- [ ] GitHub repository selection dialog
-- [ ] GitHub issues list với search
-- [ ] Task với GitHub attachments
-- [ ] GitHub attachment indicators trên task cards
-- [ ] GitHub connection status trong profile
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/67fde94e-871b-43ef-a5f3-99bbc143652a" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/2175111a-0eff-4968-afe9-ff5702eff66f" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/23e709d4-7c73-43e0-b968-7fd740bb4e49" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/abef74d8-6e11-448c-8ea3-644ddb21c19d" />
 
-### 🔔 Real-time Notifications
-- **Notification Bell**: Icon với unread count badge
-- **Notification Dropdown**: List notifications với actions
+###  Real-time Notifications
+- **Notification Bell**: Icon with unread count badge
+- **Notification Dropdown**: List notifications with action
 - **Real-time Updates**: Socket.IO powered notifications
-- **Board Invitations**: Notification cho lời mời board
-- **Task Updates**: Notification khi tasks được update
+- **Board Invitations**: Notifications for board invitations
+- **Task Updates**: Notifications when tasks are updated
 
-**📸 CHỤP ẢNH SCREENS:**
-- [ ] Notification bell icon với badge
-- [ ] Notification dropdown list
-- [ ] Board invitation notification
-- [ ] Task update notification
-- [ ] Mark all as read functionality
-
-### 🎨 UI/UX Features
+### UI/UX Features
 - **Responsive Design**: Mobile-friendly interface
 - **Material-UI Theme**: Consistent Google Material Design
 - **Loading States**: Skeleton screens và spinners
 - **Error Handling**: User-friendly error messages
-- **Dark/Light Mode**: Theme switching (nếu implement)
 
-**📸 CHỤP ẢNH SCREENS:**
-- [ ] Mobile responsive board view
-- [ ] Loading states cho various components
-- [ ] Error messages và empty states
-- [ ] Consistent Material-UI styling
 
 ## 🛠️ Development
-
-### Available Scripts
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run preview      # Preview production build
-npm run lint         # Run ESLint
-npm run lint:fix     # Fix ESLint errors
-```
-
-### Environment Variables
-```env
-# API Configuration
-VITE_API_BASE_URL=http://localhost:5001/api
-VITE_SOCKET_URL=http://localhost:5001
-
-# Feature Flags (optional)
-VITE_ENABLE_GITHUB_INTEGRATION=true
-VITE_ENABLE_NOTIFICATIONS=true
-VITE_DEBUG_MODE=false
-```
 
 ### Installation & Setup
 ```bash
@@ -212,7 +152,7 @@ npm install
 # Start development server
 npm run dev
 
-# Application will be available at http://localhost:3000
+# Application will be available at http://localhost:5173
 ```
 
 
@@ -269,7 +209,7 @@ npm run build
 ## 🐛 Debugging & Troubleshooting
 
 ### Common Issues
-1. **Socket.IO Connection**: Check CORS và network settings
+1. **Socket.IO Connection**: Check CORS and network settings
 2. **State Updates**: Verify Zustand store mutations
 3. **Drag & Drop**: HTML5 backend compatibility
 4. **GitHub OAuth**: Callback URL configuration
@@ -284,4 +224,15 @@ npm run build
 ---
 
 **Framework**: React 19 + Vite + Material-UI  
-**Cập nhật lần cuối**: September 2025
+### backend
+[mini-trello-backend](https://github.com/CaoNhatLinh/mini-trello-backend)
+
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Support
+
+For support, email caonhatlinh1312@gmail.com or create an issue in the repository.
+
