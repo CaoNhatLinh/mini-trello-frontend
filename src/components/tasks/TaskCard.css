@@ -1,0 +1,83 @@
+/* Enhanced TaskCard Styles */
+.task-card {
+  position: relative;
+  overflow: visible;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.task-card:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.task-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(142, 68, 173, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.task-card:hover::before {
+  opacity: 1;
+}
+
+/* Priority indicators removed - keeping simple design */
+
+/* Avatar Stacking Animation */
+.avatar-stack {
+  display: flex;
+  align-items: center;
+  gap: -8px;
+}
+
+.avatar-stack .MuiAvatar-root {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.avatar-stack:hover .MuiAvatar-root {
+  transform: translateX(8px);
+}
+
+.avatar-stack .MuiAvatar-root:hover {
+  transform: translateX(8px) scale(1.2) !important;
+  z-index: 10 !important;
+}
+
+/* Overdue Task Indicator */
+.overdue-indicator {
+  animation: overdue-blink 1s infinite alternate;
+}
+
+@keyframes overdue-blink {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* Task Menu Animation */
+.task-menu-button {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.task-card:hover .task-menu-button {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Smooth hover effects for chips */
+.MuiChip-root {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.MuiChip-root:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}

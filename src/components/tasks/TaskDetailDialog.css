@@ -1,0 +1,141 @@
+/* TaskDetailDialog Enhanced Styles */
+.task-detail-dialog {
+  backdrop-filter: blur(8px);
+}
+
+.task-detail-form-card {
+  background: linear-gradient(135deg, rgba(45, 46, 49, 0.3) 0%, rgba(30, 31, 34, 0.4) 100%) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(74, 75, 79, 0.6) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.task-detail-form-card:hover {
+  border-color: rgba(142, 68, 173, 0.4) !important;
+  box-shadow: 0 8px 32px rgba(142, 68, 173, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Member card animations */
+.member-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.member-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(142, 68, 173, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.member-card:hover::before {
+  left: 100%;
+}
+
+.member-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 20px rgba(142, 68, 173, 0.3);
+}
+
+/* GitHub attachment animations */
+.github-attachment-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.github-attachment-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.github-attachment-card:hover::after {
+  opacity: 1;
+}
+
+/* Priority indicator animation */
+.priority-indicator {
+  animation: priority-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes priority-glow {
+  0% { 
+    box-shadow: 0 0 5px currentColor; 
+    opacity: 0.8;
+  }
+  100% { 
+    box-shadow: 0 0 20px currentColor, 0 0 30px currentColor; 
+    opacity: 1;
+  }
+}
+
+/* Smooth transitions for form elements */
+.MuiTextField-root {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.MuiTextField-root:hover {
+  transform: translateY(-1px);
+}
+
+.MuiAutocomplete-root {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.MuiAutocomplete-root:hover {
+  transform: translateY(-1px);
+}
+
+/* Button hover effects */
+.github-action-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.github-action-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.github-action-button:hover::before {
+  left: 100%;
+}
+
+/* Loading animation */
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Dark theme shimmer */
+.loading-shimmer-dark {
+  background: linear-gradient(90deg, #2D2E31 25%, #4A4B4F 50%, #2D2E31 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}

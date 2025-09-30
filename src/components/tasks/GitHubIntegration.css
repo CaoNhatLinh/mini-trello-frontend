@@ -1,0 +1,502 @@
+/* GitHubIntegration Component Styles */
+.github-integration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.github-integration-modal {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.github-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e1e5e9;
+  background: linear-gradient(135deg, #24292e 0%, #586069 100%);
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.github-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.github-header .close-btn {
+  color: white;
+}
+
+.github-header .close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6b778c;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: #ddd;
+  color: #172b4d;
+}
+
+.github-tabs {
+  display: flex;
+  border-bottom: 1px solid #e1e5e9;
+  background-color: #f8f9fa;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 16px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b778c;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover {
+  background-color: #e4e6ea;
+  color: #172b4d;
+}
+
+.tab-btn.active {
+  color: #24292e;
+  border-bottom-color: #24292e;
+  background-color: white;
+}
+
+.github-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.attachments-tab,
+.browse-tab {
+  padding: 24px;
+}
+
+.loading-state,
+.error-state,
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.spinner-large {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #f3f4f6;
+  border-top: 3px solid #24292e;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-state p,
+.error-state p,
+.empty-state p {
+  margin: 8px 0 4px 0;
+  color: #172b4d;
+  font-weight: 500;
+}
+
+.empty-state small {
+  color: #6b778c;
+  font-size: 14px;
+}
+
+.error-icon,
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.retry-btn {
+  margin-top: 16px;
+  padding: 10px 20px;
+  background-color: #24292e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.retry-btn:hover {
+  background-color: #1b1f23;
+}
+
+.attachments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.attachment-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px;
+  border: 1px solid #e1e5e9;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  gap: 12px;
+}
+
+.attachment-item:hover {
+  border-color: #24292e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.attachment-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+}
+
+.attachment-type {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.attachment-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.attachment-title {
+  margin-bottom: 4px;
+}
+
+.attachment-link {
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.attachment-link:hover {
+  text-decoration: underline;
+}
+
+.attachment-meta {
+  color: #6b778c;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.attachment-description {
+  color: #586069;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.remove-attachment-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ff5630;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.remove-attachment-btn:hover {
+  background-color: #de350b;
+  transform: scale(1.1);
+}
+
+.repo-input-section {
+  margin-bottom: 24px;
+}
+
+.input-group {
+  display: flex;
+  gap: 12px;
+}
+
+.repo-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e1e5e9;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.repo-input:focus {
+  outline: none;
+  border-color: #24292e;
+}
+
+.load-repo-btn {
+  padding: 12px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.load-repo-btn:hover:not(:disabled) {
+  background-color: #22863a;
+}
+
+.load-repo-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background-color: #ffebe6;
+  color: #ae2a19;
+  border: 1px solid #ffbdad;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.repository-browser {
+  margin-top: 16px;
+}
+
+.repo-info h4 {
+  margin: 0 0 20px 0;
+  color: #24292e;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.repo-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.repo-section h5 {
+  margin: 0 0 12px 0;
+  color: #586069;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border: 1px solid #e1e5e9;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  gap: 12px;
+}
+
+.item-row:hover {
+  border-color: #24292e;
+  background-color: #f6f8fa;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.item-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.item-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-title {
+  font-weight: 500;
+  color: #24292e;
+  font-size: 14px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-meta {
+  color: #6b778c;
+  font-size: 12px;
+}
+
+.attach-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: #0366d6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.attach-btn:hover {
+  background-color: #005cc5;
+  transform: scale(1.05);
+}
+
+.github-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #e1e5e9;
+  background-color: #f8f9fa;
+  text-align: right;
+  border-radius: 0 0 12px 12px;
+}
+
+.close-footer-btn {
+  padding: 10px 20px;
+  background-color: #6b778c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.close-footer-btn:hover {
+  background-color: #5e6c84;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .github-integration-modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .github-header,
+  .attachments-tab,
+  .browse-tab,
+  .github-footer {
+    padding: 16px;
+  }
+  
+  .tab-btn {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .item-row,
+  .attachment-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .attach-btn,
+  .remove-attachment-btn {
+    align-self: flex-end;
+  }
+}
