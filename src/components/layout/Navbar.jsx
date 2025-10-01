@@ -23,6 +23,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { authAPI, boardsAPI } from '../../services/api';
 import { useInvitationStore, useTaskMemberStore } from '../../utils/store';
 import PendingInvitations from '../boards/PendingInvitations';
+import { logos } from '../../assets';
 
 function Navbar({ onMenuToggle, sidebarOpen }) { // Nhận prop sidebarOpen
   const [anchorEl, setAnchorEl] = useState(null);
@@ -149,7 +150,7 @@ function Navbar({ onMenuToggle, sidebarOpen }) { // Nhận prop sidebarOpen
               }}
             >
               <img 
-                src="/src/assets/img/logo.png" 
+                src={logos.main} 
                 alt="Logo" 
                 style={{ 
                   width: '100%', 

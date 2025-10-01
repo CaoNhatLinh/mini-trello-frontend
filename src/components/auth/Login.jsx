@@ -11,6 +11,7 @@ import {
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { authAPI } from '../../services/api';
+import { images, backgrounds } from '../../assets';
 
 function Login() {
   const [step, setStep] = useState('email'); 
@@ -113,7 +114,7 @@ function Login() {
           bottom: 0,
           width: '400px',
           height: '300px',
-          backgroundImage: 'url(/src/assets/img/Image-39.png)',
+          backgroundImage: `url(${backgrounds.leftDecor})`,
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           opacity: 0.7,
@@ -126,7 +127,7 @@ function Login() {
           bottom: 0,
           width: '400px',
           height: '300px',
-          backgroundImage: 'url(/src/assets/img/Image-40.png)',
+          backgroundImage: `url(${backgrounds.rightDecor})`,
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           opacity: 0.7,
@@ -159,7 +160,7 @@ function Login() {
           {/* Logo */}
           <Box sx={{ textAlign: 'center', mb: 3 }}>
             <img
-              src="/src/assets/img/logo.png"
+              src={images.logo}
               alt="Logo"
               style={{
                 width: '64px',
