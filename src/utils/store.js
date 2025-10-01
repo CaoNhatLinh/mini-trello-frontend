@@ -351,6 +351,7 @@ export const useTaskStore = create((set, get) => ({
   deleteTask: async (boardId, cardId, taskId) => {
     set({ loading: true, error: null });
     try {
+      console.log('Deleting task:', { boardId, cardId, taskId });
       await tasksAPI.deleteTask(boardId, cardId, taskId);
       set((state) => ({
         tasks: state.tasks.filter((task) => (task.id) !== taskId),
